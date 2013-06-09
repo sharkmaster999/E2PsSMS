@@ -30,7 +30,7 @@
         <div align="left" style="padding-top: 5px; margin-top: 15px; padding-bottom: 5px; margin-left: 15px;margin-right: 15px; margin-bottom: 15px;" >
             <span class="sms_label"><b>Text now for Free!</b></span>
         </div>
-        <form action='sendsms.php' method='post' >
+        <form action='sendsms.php' method='post' onsubmit="return check(this);">
             <table>
                 <tr>
                     <td>Recipient:&nbsp;</td>
@@ -79,18 +79,21 @@
                             <option value="+63998" disabled="disabled">0998</option>
                             <option value="+63999">0999</option>
                         </select>
-                        <input type='text' name='recipient' id="recipient" style="width: 150px;"></td>
+                        <input type='text' name='recipient' id="recipient" onkeyup="rec_checkSpace(this)" style="width: 150px;"></td>
                 </tr>
                 <tr>
                     <td style=""><span style="/*padding-top: 33px; padding-bottom: 33px;*/margin-bottom: 90px; float: left;">Message:&nbsp;</span></td>
-                    <td><textarea onKeyPress="return charLimit(this)" onKeyUp="return characterCount(this)" style="resize: none; width: 233px;" rows=4 cols=100 name='message' id="message"></textarea><br/>
+                    <td><textarea onkeyup="msg_checkSpace(this)" onKeyPress="return charLimit(this)" onKeyUp="return characterCount(this)" style="resize: none; width: 233px;" rows=4 cols=100 name='message' id="message"></textarea><br/>
                         <p><strong><span id="charCount">150</span></strong> characters available.</p>
                     </td>
                 </tr>
                 <tr>
                     <td> </td>
                     <td>
+                        <!--<input type="hidden" id="pass" style="width: 80px;" placeholder="Password" title="Under construction pa po !! Sorry sa abala .. :)"/>
+                        <input type="hidden" id="re_pass" value="mark"/>-->
                         <input type='submit' name='smsSendBtn' class="btn btn-primary btn-medium" id="smsSendBtn" value='Send'>
+                    </td>
                 </tr>
             </table>
         </form>
