@@ -14,11 +14,39 @@
               if (el.value.length > maxLength) return false;
               return true;
           }
+
           function characterCount(el) {
               var charCount = document.getElementById('charCount');
-              if (el.value.length > maxLength) el.value = el.value.substring(0,maxLength);
-              if (charCount) charCount.innerHTML = maxLength - el.value.length;
-              return true;
+              var msg = $('#message').val();
+
+              if(msg == ""){
+                //  alert("wew");
+                  $('#message').css({"border-color":"rgba(82, 168, 236, 0.8)","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)"});
+                  charCount.innerHTML = maxLength - el.value.length;
+                  return false;
+              }else if(msg.match(/^\s*$/)){
+
+                  $('#message').css({"border-color":" #b94a48","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 100, 0, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 100, 0, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 100, 0, 0.6)"}).focus();
+                  charCount.innerHTML = maxLength - el.value.length;
+                  return false;
+              }
+
+              if(msg == ""){
+                  $('#message').css({"border-color":"rgba(82, 168, 236, 0.8)","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)"});
+                  return false;
+              }else{
+                  $('#message').css({"border-color":"rgba(82, 168, 236, 0.8)","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)"});
+              }
+
+              if (el.value.length > maxLength ){
+                 // alert("wew!");
+                  el.value = el.value.substring(0,maxLength);
+              }
+              if (charCount){
+                  charCount.innerHTML = maxLength - el.value.length;
+                  return true;
+              }
+
           }
       </script>
     <title>E2Ps Free SMS</title>
@@ -83,7 +111,7 @@
                 </tr>
                 <tr>
                     <td style=""><span style="/*padding-top: 33px; padding-bottom: 33px;*/margin-bottom: 90px; float: left;">Message:&nbsp;</span></td>
-                    <td><textarea onkeyup="msg_checkSpace(this)" onKeyPress="return charLimit(this)" onKeyUp="return characterCount(this)" style="resize: none; width: 233px;" rows=4 cols=100 name='message' id="message"></textarea><br/>
+                    <td><textarea  onKeyPress="return charLimit(this)" onKeyUp="return characterCount(this)" style="resize: none; width: 233px;" rows=4 cols=100 name='message' id="message"></textarea><br/>
                         <p><strong><span id="charCount">150</span></strong> characters available.</p>
                     </td>
                 </tr>
