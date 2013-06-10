@@ -8,47 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/sms_header.css">
     <script type="text/javascript" src="js/sms.js"></script>
-      <script type='text/javascript'>
-          var maxLength=150;
-          function charLimit(el) {
-              if (el.value.length > maxLength) return false;
-              return true;
-          }
 
-          function characterCount(el) {
-              var charCount = document.getElementById('charCount');
-              var msg = $('#message').val();
-
-              if(msg == ""){
-                //  alert("wew");
-                  $('#message').css({"border-color":"rgba(82, 168, 236, 0.8)","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)"});
-                  charCount.innerHTML = maxLength - el.value.length;
-                  return false;
-              }else if(msg.match(/^\s*$/)){
-
-                  $('#message').css({"border-color":" #b94a48","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 100, 0, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 100, 0, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 100, 0, 0.6)"}).focus();
-                  charCount.innerHTML = maxLength - el.value.length;
-                  return false;
-              }
-
-              if(msg == ""){
-                  $('#message').css({"border-color":"rgba(82, 168, 236, 0.8)","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)"});
-                  return false;
-              }else{
-                  $('#message').css({"border-color":"rgba(82, 168, 236, 0.8)","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)"});
-              }
-
-              if (el.value.length > maxLength ){
-                 // alert("wew!");
-                  el.value = el.value.substring(0,maxLength);
-              }
-              if (charCount){
-                  charCount.innerHTML = maxLength - el.value.length;
-                  return true;
-              }
-
-          }
-      </script>
     <title>E2Ps Free SMS</title>
   </head>
  <body>
@@ -110,7 +70,7 @@
                         <input type='text' name='recipient' id="recipient" onkeyup="rec_checkSpace(this)" style="width: 150px;"></td>
                 </tr>
                 <tr>
-                    <td style=""><span style="/*padding-top: 33px; padding-bottom: 33px;*/margin-bottom: 90px; float: left;">Message:&nbsp;</span></td>
+                    <td ><span style="margin-bottom: 90px; float: left;">Message:&nbsp;</span></td>
                     <td><textarea  onKeyPress="return charLimit(this)" onKeyUp="return characterCount(this)" style="resize: none; width: 233px;" rows=4 cols=100 name='message' id="message"></textarea><br/>
                         <p><strong><span id="charCount">150</span></strong> characters available.</p>
                     </td>
@@ -118,8 +78,6 @@
                 <tr>
                     <td> </td>
                     <td>
-                        <!--<input type="hidden" id="pass" style="width: 80px;" placeholder="Password" title="Under construction pa po !! Sorry sa abala .. :)"/>
-                        <input type="hidden" id="re_pass" value="mark"/>-->
                         <input type='submit' name='smsSendBtn' class="btn btn-primary btn-medium" id="smsSendBtn" value='Send'>
                     </td>
                 </tr>
