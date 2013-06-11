@@ -75,6 +75,11 @@ $(document).ready(function(){
     function rec_checkSpace(){
         var rec = $('#recipient').val();
 
+        if(rec.length == 7){
+            $('#recipient').css({"-webkit-transition":"border linear 0.2s, box-shadow linear 0.2s","-moz-transition":"border linear 0.2s, box-shadow linear 0.2s", "-o-transition":"border linear 0.2s, box-shadow linear 0.2s", "transition":"border linear 0.2s, box-shadow linear 0.2s", "background-color":"#ffffff", "border":"1px solid #cccccc","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)"});
+            return false;
+        }
+
         if(rec == ""){
            // alert('ewe!');
             $('#recipient').css({"-webkit-transition":"border linear 0.2s, box-shadow linear 0.2s","-moz-transition":"border linear 0.2s, box-shadow linear 0.2s", "-o-transition":"border linear 0.2s, box-shadow linear 0.2s", "transition":"border linear 0.2s, box-shadow linear 0.2s", "background-color":"#ffffff", "border":"1px solid #cccccc","-webkit-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075)", "-moz-box-shadow": "inset 0 1px 1px rgba(0, 0, 0, 0.075)", " box-shadow":"inset 0 1px 1px rgba(0, 0, 0, 0.075)"});

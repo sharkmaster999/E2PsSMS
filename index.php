@@ -84,5 +84,10 @@
             </table>
         </form>
     </div>
+    <div class="div_post">
+        <div id="post_tabs">
+            <div></div>
+        </div>
+    </div>
  </body>
 </html>
